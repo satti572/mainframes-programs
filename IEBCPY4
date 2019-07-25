@@ -1,0 +1,9 @@
+//OZA101I JOB ,,NOTIFY=&SYSUID                                          00010000
+//STEP1 EXEC PGM=IEBCOPY                                                00020000
+//SYSPRINT DD SYSOUT=*                                                  00021000
+//SYSUT1 DD DSN=OZA101.JCL.PDS1,DISP=SHR                                00022006
+//SYSUT2 DD DSN=OZA101.JCL.PDS2,DISP=SHR                                00023006
+//SYSIN DD DUMMY                                                        00024003
+//                                                                      00024103
+  COPY OUTDD=(SYSUT2,R),INDD=SYSUT1                                     00024206
+/*                                                                      00024500

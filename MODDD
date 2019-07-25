@@ -1,0 +1,27 @@
+//OZA101J JOB ,,NOTIFY=&SYSUID                                          00010000
+//MYPROC1 PROC                                                          00011000
+//STEP1   EXEC PGM=IEFBR14,TIME=(2,30)                                  00012000
+//DD1     DD DSN=OZA101.JCL.PS1,                                        00013000
+//           DISP=(NEW,CATLG,DELETE),                                   00014001
+//           RECFM=FB,                                                  00015000
+//           LRECL=80,                                                  00016000
+//           BLKSIZE=800                                                00017001
+// PEND                                                                 00018800
+//*EXISTING DD STMTS CAN BE OVERRIDDEN OR ADDED,PARAMS CAN BE ADDED     00018901
+// EXEC MYPROC1                                                         00019001
+//STEP1.DD1 DD DISP=(OLD,CATLG,DELETE),SPACE=(TRK,(1,1))                00019101
+//STEP1.DD2 DD DSN=OZA101.JCL.PS2,                                      00019301
+//           DISP=(MOD,CATLG,DELETE),                                   00019401
+//           RECFM=FB,                                                  00019501
+//           LRECL=80,                                                  00019601
+//           BLKSIZE=800,                                               00019701
+//           SPACE=(TRK,(1,1))                                          00019801
+//*IF THE PROC IS CATALOGED, THE //IN THE PROC WILL BE CHANGED TO       00019901
+//* XX IF THE STATEMENT IS NOT OVERRIDDEN                               00020001
+//* X/ PARAMETER OVERRIDDEN                                             00030001
+//* XX* STMT CHANGED TO A COMMENT                                       00040001
+//*                                                                     00050001
+//* IF THE PROC IS INSTREAM, THE //IN THE PROC WILL BE CHANGED TO       00060001
+//* ++ IF STMT IS NOT OVERRIDDEN                                        00070001
+//* +/ IF PARM IS OVERRIDDEN                                            00080001
+//* ++* IF STMT CHANGED TO A COMMENT                                    00090001

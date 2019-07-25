@@ -1,0 +1,15 @@
+//OZA101E JOB ,,NOTIFY=&SYSUID                                          00010000
+//STEP1 EXEC PGM=IDCAMS                                                 00020000
+//SYSOUT DD SYSOUT=*                                                    00030000
+//SYSPRINT DD SYSOUT=*                                                  00040000
+//SYSIN DD *                                                            00050002
+         PRINT IDS(OZA101.VSAM.KSDS1) FROMKEY(100) TOKEY(105) CHAR      00060002
+         LISTCAT ENT(OZA101.VSAM.KSDS1) ALL                             00070002
+         PRINT IDS(OZA101.VSAM.KSDS1) SKIP(1) COUNT(3) CHAR             00080002
+/*                                                                      00090002
+//*REPRO IDS(OZA101.VSAM.PS1(MEM1)) ODS(OZA101.VSAM.KSDS1)              00100002
+//*F LASTCC = 0                  -                                      00110002
+//*  THEN                        -                                      00120002
+//*  ELSE DO                     -                                      00130002
+//*  END                                                                00140002
+/*                                                                      00150000

@@ -1,0 +1,5 @@
+//OZA101A JOB ,,NOTIFY=&SYSUID                                          00010000
+// EXEC PGM=IDCAMS                                                      00020000
+//SYSPRINT DD SYSOUT=*                                                  00030000
+//SYSIN DD *                                                            00040000
+  ALTER OZA101.VSAM.XYZ FREESPACE(10 10)                                00050002

@@ -1,0 +1,10 @@
+//OZA101D JOB ,,NOTIFY=&SYSUID                                          00010000
+//STEP1   EXEC PGM=IDCAMS                                               00020000
+//SYSOUT  DD SYSOUT=*                                                   00030000
+//SYSPRINT DD SYSOUT=*                                                  00040000
+//SYSIN DD *                                                            00050000
+  DELETE OZA101.VSAM.KSDS1 CLUSTER                                      00060003
+/*                                                                      00070000
+//* ERASE/NOERASE-COMPONENTS ARE OVERWRITTEN WITH X'00'S                00080000
+//* PURGE/NOPURGE-CLUSTER IS TO BE DELETED REGARDELESS OF RETENTION PERD00090000
+//* SCRATCH/NOSCRATCH-DATASET IS TO BE REMOVED FROM VTOC/VVDS OF THE VOL00100000

@@ -1,0 +1,7 @@
+//OZA101E JOB ,,NOTIFY=&SYSUID                                          00010000
+//STEP1 EXEC PGM=IDCAMS                                                 00020000
+//SYSOUT DD SYSOUT=*                                                    00030000
+//SYSPRINT DD SYSOUT=*                                                  00040000
+//SYSIN DD *                                                            00050000
+  REPRO IDS(OZA101.JCL.PS2) ODS(OZA101.VSAM.ESDS5)                      00060001
+  PRINT IDS(OZA101.VSAM.ESDS5) CHAR SKIP(3) COUNT(2)                    00070001

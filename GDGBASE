@@ -1,0 +1,11 @@
+//OZA101G JOB ,,NOTIFY=&SYSUID                                          00010000
+//STEP1 EXEC PGM=IDCAMS                                                 00020000
+//SYSPRINT DD SYSOUT=*                                                  00030000
+//SYSIN DD *                                                            00040000
+  DEFINE GDG -                                                          00050000
+  (NAME(OZA101.JCL.GDG)-                                                00060000
+  SCRATCH              -                                                00070000
+  NOEMPTY              -                                                00080000
+  LIMIT(03))                                                            00090000
+/*                                                                      00100000
+                                                                        00110000

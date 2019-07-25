@@ -1,0 +1,10 @@
+//OZA101I JOB ,,NOTIFY=&SYSUID                                          00010000
+//STEP1 EXEC PGM=IEHLIST                                                00020000
+//SYSPRINT DD SYSOUT=*                                                  00021000
+//DD1 DD DSN=OZA101.JCL.PS1,DISP=SHR                                    00022000
+//DD2 DD SYSOUT=*                                                       00023000
+//SYSIN DD *                                                            00024000
+  LISTVTOC FORMAT,VOL=SYSDA=OZAV03                                      00024102
+/*                                                                      00024802
+  LISTPDS DSNAME=OZA101.JCL.PDS1,VOL=SYSDA=OZAV02                       00025002
+//                                                                      00026000

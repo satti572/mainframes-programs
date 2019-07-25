@@ -1,0 +1,31 @@
+//OZA101A JOB ,,NOTIFY=&SYSUID,RESTART=STEP2                            00010003
+//STEP1 EXEC PGM=IDCAMS                                                 00020000
+//SYSOUT DD SYSOUT=*                                                    00030000
+//SYSPRINT DD SYSOUT=*                                                  00040000
+//SYSIN DD *                                                            00050000
+  DEFINE ALTERNATEINDEX -                                               00060000
+  (NAME(OZA101.VSAM.KSDS1.AIX) -                                        00070004
+   RELATE(OZA101.VSAM.KSDS1)   -                                        00080004
+   KEYS(10,5)                  -                                        00090004
+   UNIQUEKEY                   -                                        00100001
+   NOUPGRADE                   -                                        00110001
+   RECORDSIZE(9,9)           -                                          00120004
+   TRK(1,1))                                                            00130001
+/*                                                                      00140001
+//STEP2 EXEC PGM=IDCAMS                                                 00150002
+//SYSOUT DD SYSOUT=*                                                    00160002
+//SYSPRINT DD SYSOUT=*                                                  00170002
+//SYSIN DD *                                                            00180002
+  DEFINE PATH                       -                                   00190002
+      (NAME(OZA101.VSAM.KSDS1.PATH) -                                   00200004
+      PATHENTRY(OZA101.VSAM.KSDS1)  -                                   00210004
+      UPDATE)                                                           00220002
+/*                                                                      00230002
+//****BUILDINDEX*********                                               00231004
+//STEP2 EXEC PGM=IDCAMS                                                 00240004
+//SYSPRINT DD SYSOUT=*                                                  00250004
+//SYSOUT DD SYSOUT=*                                                    00251004
+//SYSIN DD *                                                            00260004
+  BLDINDEX IDS(OZA101.VSAM.KSDS1) -                                     00270004
+  ODS(OZA101.VSAM.KSDS1.AIX)                                            00280004
+/*                                                                      00290004

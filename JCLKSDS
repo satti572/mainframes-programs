@@ -1,0 +1,5 @@
+//OZA101 JOB ,,NOTIFY=&SYSUID                                           00010000
+//STEP1 EXEC PGM=IEFBR14                                                00020000
+//DD1 DD DSN=OZA101.VSAM.KSDSJCL,DISP=(NEW,CATLG),                      00030000
+//       AVGREC=K,RECORG=KS,SPACE=(TRK,(1,1)),KEYLEN=3,KEYOFF=0,        00040000
+//       LRECL=80                                                       00050000

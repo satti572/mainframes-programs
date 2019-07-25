@@ -1,0 +1,10 @@
+//OZA101J JOB ,,NOTIFY=&SYSUID                                          00010000
+//* THIS JCL IS THE FIRST JCL WITH ONE JOB CARD AND EXEC STATEMENT      00011000
+//STEP1   EXEC PGM=IEFBR14                                              00020000
+//DD1     DD DSN=OZA101.JCL.PDS1,                                       00030001
+//           DISP=(NEW,CATLG,DELETE),                                   00040000
+//           RECFM=FB,                                                  00050000
+//           LRECL=80,                                                  00051000
+//           BLKSIZE=800,                                               00060000
+//           SPACE=(TRK,(1,1,1))                                        00070001
+/*                                                                      00080000

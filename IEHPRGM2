@@ -1,0 +1,7 @@
+//OZA101I JOB ,,NOTIFY=&SYSUID                                          00010000
+//STEP1   EXEC PGM=IEHPROGM                                             00020000
+//SYSPRINT DD SYSOUT=*                                                  00030000
+//DD1     DD UNIT=SYSDA,VOL=SER=OZAV02,DISP=OLD                         00040003
+//SYSIN   DD *                                                          00050000
+  SCRATCH MEMBER=MEM1,DSNAME=OZA101.JCL.PDS1,VOL=SYSALLDA=OZAV02        00060003
+/*                                                                      00090000

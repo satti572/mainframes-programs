@@ -1,0 +1,11 @@
+//OZA101J JOB ,,NOTIFY=&SYSUID                                          00010000
+//MYPROC1 PROC DSNM='OZA101.JCL.PS1'                                    00010100
+//STEP1   EXEC PGM=IEFBR14                                              00010200
+//DD1     DD DSN=&DSNM,                                                 00010300
+//           DISP=(MOD,CATLG,DELETE),                                   00010400
+//           RECFM=FB,                                                  00010500
+//           LRECL=80,                                                  00010600
+//           BLKSIZE=800,                                               00010700
+//           SPACE=(TRK,(1,1))                                          00010800
+// PEND                                                                 00010900
+// EXEC MYPROC1                                                         00011000

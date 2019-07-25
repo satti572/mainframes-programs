@@ -1,0 +1,19 @@
+//OZA101I JOB ,,NOTIFY=&SYSUID                                          00010000
+//STEP1 EXEC PGM=IEBGENER                                               00020000
+//*SYSIN DD DUMMY                                                       00021000
+//SYSPRINT DD SYSOUT=*                                                  00022000
+//SYSUT1 DD DATA                                                        00023000
+100MAGEBANGALORE                                                        00024000
+101MAITBANGALORE                                                        00025000
+103MIT MANIPAL                                                          00026000
+/*                                                                      00027000
+//SYSUT2 DD  DSN=OZA101.JCL.PS1,DISP=(MOD,CATLG,CATLG)                  00028000
+//STEP1 EXEC PGM=IEBGENER                                               00029000
+//SYSIN DD DUMMY                                                        00030000
+//SYSPRINT DD SYSOUT=*                                                  00040000
+//SYSUT1 DD DATA                                                        00050000
+100MAGEBANGALORE                                                        00060000
+101MAITBANGALORE                                                        00070000
+103MIT MANIPAL                                                          00080000
+/*                                                                      00090000
+//SYSUT2 DD  DSN=OZA101.JCL.PS1,DISP=(MOD,CATLG,CATLG)                  00100000

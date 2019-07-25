@@ -1,0 +1,4 @@
+//OZA101M JOB ,,NOTIFY=&SYSUID                                          00010000
+//STEP1 EXEC PGM=IEFBR14                                                00020000
+//DD1  DD DSN=OZA101.JCL.MODEL,DISP=(NEW,CATLG,DELETE),                 00030000
+//        DSORG=PS,LRECL=80,BLKSIZE=800,SPACE=(TRK,(0,0))               00040001

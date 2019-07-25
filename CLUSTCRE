@@ -1,0 +1,11 @@
+//OZA101E JOB ,,NOTIFY=&SYSUID                                          00010000
+//STEP1 EXEC PGM=IDCAMS                                                 00020000
+//SYSOUT DD SYSOUT=*                                                    00030000
+//SYSPRINT DD SYSOUT=*                                                  00040000
+//SYSIN DD *                                                            00050000
+  DEFINE CLUSTER(                -                                      00060000
+     NAME(OZA101.VSAM.XYZ  )     -                                      00070010
+     RECORDSIZE(80,80)           -                                      00080000
+     CISZ(4096)                  -                                      00090000
+     TRACKS(1,1)                 -                                      00110000
+     )                                                                  00130000

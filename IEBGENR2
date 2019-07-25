@@ -1,0 +1,9 @@
+//OZA101I JOB ,,NOTIFY=&SYSUID                                          00010000
+//STEP1 EXEC PGM=IEBGENER                                               00020000
+//SYSPRINT DD SYSOUT=*                                                  00030000
+//SYSUT1 DD DSN=OZA101.JCL.PS1,DISP=SHR                                 00040000
+//SYSUT2 DD DSN=OZA101.JCL.PS2,DISP=SHR                                 00050000
+//SYSIN DD *                                                            00060000
+  GENERATE MAXFLDS=3                                                    00070001
+  RECORD FIELD=(9,8,,1),FIELD=(3,1,,13),FIELD=(4,4,,20)                 00080000
+//                                                                      00090000

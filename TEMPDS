@@ -1,0 +1,10 @@
+//OZA101J JOB ,,NOTIFY=&SYSUID                                          00010000
+//STEP1   EXEC PGM=IEFBR14                                              00020000
+//DD1     DD DSN=&TEMP,                                                 00030003
+//           DISP=(,PASS),                                              00040003
+//           RECFM=FB,                                                  00050000
+//           LRECL=80,                                                  00051000
+//           BLKSIZE=800,                                               00060000
+//           SPACE=(TRK,(1,1))                                          00070000
+//STEP2   EXEC PGM=IEFBR14                                              00090001
+//DD2     DD DSN=&TEMP                                                  00100003

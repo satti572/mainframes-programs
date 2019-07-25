@@ -1,0 +1,3 @@
+//OZA101J JOB ,,NOTIFY=&SYSUID                                          00010000
+// JCLLIB ORDER=(OZA101.JCL.PROCLIB)                                    00011001
+// INCLUDE MEMBER=MEM1                                                  00012001

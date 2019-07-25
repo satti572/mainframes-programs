@@ -1,0 +1,23 @@
+//OZA101J JOB ,,NOTIFY=&SYSUID                                          00010000
+//MYPROC1 PROC                                                          00011000
+//STEP1   EXEC PGM=IEFBR14,TIME=(2,30)                                  00012000
+//DD1     DD DSN=OZA101.JCL.PS1,                                        00013000
+//           DISP=(MOD,CATLG,DELETE),                                   00014000
+//           RECFM=FB,                                                  00015000
+//           LRECL=80,                                                  00016000
+//           BLKSIZE=800,                                               00017000
+//           SPACE=(TRK,(1,1))                                          00018000
+//STEP2   EXEC PGM=IEFBR14,TIME=(3,10)                                  00018100
+//DD1     DD DSN=OZA101.JCL.PS1,                                        00018200
+//           DISP=(MOD,CATLG,DELETE),                                   00018300
+//           RECFM=FB,                                                  00018400
+//           LRECL=80,                                                  00018500
+//           BLKSIZE=800,                                               00018600
+//           SPACE=(TRK,(1,1))                                          00018700
+// PEND                                                                 00019000
+//*EXISTING EXEC STMTS CAN BE OVERRIDDEN OR ADDED                       00019101
+// EXEC MYPROC1,TIME.STEP1=(1,1),PARM.STEP2=ABC                         00020001
+//*EXISTING EXEC STMTS CAN BE NULLIFIED                                 00030000
+// EXEC MYPROC1,TIME.STEP1=                                             00040000
+//*PARAMETER VALUES CAN BE APPLIDED TO EVERY STEP                       00050000
+// EXEC MYPROC1,TIME=(2,10)                                             00060000
